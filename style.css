@@ -1,0 +1,274 @@
+/* 전통 궁궐 테마 — 기와(먹색) · 주칠(붉은 옻칠) · 단청(청·녹·황) · 한지 */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap");
+
+    :root {
+      --giwa: #2a2d31;        /* 기와 먹색 */
+      --giwa-2: #3b4046;
+      --juchil: #8b2a22;      /* 주칠(기둥 붉은색) */
+      --juchil-2: #a8382c;
+      --green-deep: #24584b;  /* 단청 뇌록 */
+      --green-mid: #2f6b5a;
+      --green-btn: #8b2a22;   /* 버튼은 주칠색 */
+      --cheong: #2d4f73;      /* 단청 청색 */
+      --gold: #c8a04a;        /* 금단청 */
+      --gold-soft: #e9d6a3;
+      --paper: #f3ead8;       /* 한지 */
+      --paper-2: #fbf6ea;
+      --line: #d6c6a6;
+      --ink: #2b2420;
+      --muted: #6e6253;
+      --mint: #e8dcc0;        /* 펼친 항목 배경(연한 미색) */
+
+      /* 단청 띠 문양 */
+      --danchung: repeating-linear-gradient(90deg,
+        #2f6b5a 0 18px, #c8a04a 18px 22px, #8b2a22 22px 34px,
+        #f3ead8 34px 37px, #2d4f73 37px 51px, #f3ead8 51px 54px);
+      --serif: "Noto Serif KR", "Nanum Myeongjo", "Batang", "AppleMyungjo", serif;
+    }
+
+    /* ---------- 공통 (STEP 01 유지) ---------- */
+    .ui-page-theme-a,
+    .ui-page-theme-a .ui-content {
+      color: var(--ink);
+      /* 한지 결 느낌의 은은한 질감 */
+      background:
+        radial-gradient(circle at 20% 15%, rgba(255, 255, 255, .55) 0, transparent 40%),
+        radial-gradient(circle at 85% 70%, rgba(200, 160, 74, .08) 0, transparent 45%),
+        var(--paper);
+    }
+    .ui-page-theme-a,
+    .ui-page-theme-a .ui-btn,
+    .ui-page-theme-a .ui-body-a,
+    .ui-page-theme-a input,
+    .ui-page-theme-a button {
+      font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      text-shadow: none;
+    }
+
+    /* 헤더: 기와지붕 + 아래 단청 띠 */
+    .ui-page .ui-header {
+      background: var(--danchung) left bottom / 100% 6px no-repeat,
+                  linear-gradient(180deg, var(--giwa-2) 0%, var(--giwa) 100%);
+      border: 0; color: #fff; padding-bottom: 6px;
+    }
+    .ui-header .ui-title {
+      margin: 0; padding: 1.1em 1em;
+      font-family: var(--serif);
+      font-size: 1.15em; font-weight: 700; letter-spacing: .08em;
+      color: var(--gold-soft); text-shadow: 0 1px 0 rgba(0, 0, 0, .5);
+    }
+    .ui-header .ui-btn { background: transparent; border: 0; color: #fff; text-shadow: none; }
+
+    /* 푸터: 위쪽 단청 띠 + 기와색 */
+    .ui-footer.ui-bar-inherit {
+      background: var(--danchung) left top / 100% 4px no-repeat, var(--giwa);
+      border: 0; color: var(--gold-soft);
+      text-align: center; padding: 1.3em 1em 1.1em; font-size: .8em; font-weight: 500;
+      letter-spacing: .05em;
+    }
+    .ui-footer p { margin: 0; }
+
+    /* 홈 */
+    .hero {
+      position: relative; height: 210px; border-radius: 4px; overflow: hidden;
+      background: linear-gradient(180deg, #9cc7de 0%, #5f8576 100%);
+      border: 3px solid var(--juchil);
+      box-shadow: 0 0 0 2px var(--gold), 0 6px 16px rgba(43, 36, 32, .25);
+    }
+    .hero img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .hero-caption {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 2.2em 1.1em .9em; color: #fff;
+      background: linear-gradient(to top, rgba(30, 22, 18, .85), rgba(30, 22, 18, 0));
+    }
+    .hero-caption h2 {
+      margin: 0 0 .3em; font-family: var(--serif);
+      font-size: 1.2em; font-weight: 700; color: var(--gold-soft); letter-spacing: .04em;
+    }
+    .hero-caption p { margin: 0; font-size: .82em; opacity: .95; }
+    .lead { margin: 1.4em 0 1.1em; font-size: .88em; line-height: 1.8; color: var(--muted); }
+
+    .menu-list { margin: 0 0 1em; }
+    .menu-list > li { border: 0; margin-bottom: .6em; }
+    .menu-list > li > a.ui-btn {
+      padding: 1.1em 1em 1.1em 1.3em;
+      background: linear-gradient(90deg, var(--juchil) 0 6px, var(--paper-2) 6px);
+      border: 1px solid var(--line); border-radius: 3px;
+      color: var(--ink); font-family: var(--serif); font-size: 1.05em; font-weight: 700;
+      letter-spacing: .03em;
+      box-shadow: 0 2px 0 var(--line);
+    }
+    .menu-list > li > a.ui-btn:hover { background: linear-gradient(90deg, var(--gold) 0 6px, #fff 6px); }
+
+    .step-card {
+      margin-top: .8em; padding: 1.1em 1em 1.3em;
+      background: var(--paper-2); border: 1px solid var(--line); border-radius: 3px;
+      border-top: 4px solid var(--green-mid);
+    }
+    .step-badge {
+      display: inline-block; padding: .25em .9em; border-radius: 2px;
+      background: var(--juchil); color: var(--gold-soft);
+      font-size: .78em; font-weight: 700; letter-spacing: .08em;
+    }
+    .step-card p { margin: 1.2em 0 0; font-size: .86em; color: var(--muted); }
+
+    /* 소개 */
+    .intro-title {
+      margin: .2em 0 .4em; font-family: var(--serif);
+      font-size: 1.4em; color: var(--juchil); letter-spacing: .06em;
+    }
+    .intro-sub { margin: 0 0 1.2em; font-size: .88em; line-height: 1.8; color: var(--muted); }
+
+    .ui-collapsible-set { margin: 0; }
+    .ui-collapsible-set .ui-collapsible { margin: 0 0 .7em; }
+    .ui-collapsible-set .ui-collapsible-heading-toggle {
+      background: var(--paper-2); border: 1px solid var(--line); border-radius: 3px;
+      color: var(--ink); font-family: var(--serif); font-weight: 700;
+      padding: 1em 1em 1em 2.6em;
+    }
+    .ui-collapsible-set .ui-collapsible:not(.ui-collapsible-collapsed) > .ui-collapsible-heading > .ui-collapsible-heading-toggle {
+      background: var(--giwa); color: var(--gold-soft);
+      border-color: var(--giwa); border-radius: 3px 3px 0 0;
+    }
+    .ui-collapsible-set .ui-collapsible-content {
+      background: var(--paper-2); border: 1px solid var(--line); border-top: 3px solid var(--gold);
+      border-radius: 0 0 3px 3px; padding: .9em 1.1em 1.1em;
+      font-size: .9em; line-height: 1.8;
+    }
+    .ui-collapsible-content p { margin: 0 0 .7em; }
+    .ui-collapsible-content p:last-child { margin-bottom: 0; }
+    .ui-collapsible-content ul { margin: 0; padding-left: 1.2em; }
+    .ui-collapsible-content li { margin-bottom: .45em; }
+    .ui-collapsible-content li::marker { color: var(--juchil); }
+    .ui-collapsible-content li:last-child { margin-bottom: 0; }
+    .ui-collapsible-content strong { color: var(--juchil); }
+
+    /* ---------- STEP 02 추가: 영상 / 음악 / 안내 ---------- */
+    .page-title {
+      margin: .3em 0 .8em; text-align: center;
+      font-family: var(--serif); font-size: 1.5em; color: var(--juchil); letter-spacing: .08em;
+    }
+    /* 제목 아래 단청색 장식선 */
+    .page-title::after {
+      content: ""; display: block; width: 72px; height: 4px; margin: .45em auto 0;
+      background: linear-gradient(90deg, var(--green-mid) 0 33%, var(--gold) 33% 66%, var(--juchil) 66%);
+    }
+    /* 현판처럼 보이는 안내 상자 */
+    .note-box {
+      margin: 0 0 1.1em; padding: .8em 1em; text-align: center;
+      background: var(--giwa); color: var(--gold-soft);
+      border: 2px solid var(--gold); outline: 3px solid var(--giwa);
+      font-family: var(--serif); font-weight: 700; font-size: .95em; letter-spacing: .06em;
+    }
+    .section-label {
+      margin: 1.4em 0 .5em; padding-left: .6em;
+      border-left: 4px solid var(--juchil);
+      font-family: var(--serif); font-size: .98em; font-weight: 700; color: var(--ink);
+    }
+
+    .video-wrap {
+      position: relative; padding-top: 56.25%;
+      border-radius: 3px; overflow: hidden; background: #000;
+      border: 3px solid var(--juchil); box-shadow: 0 0 0 2px var(--gold);
+    }
+    .video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    video.local-video {
+      display: block; width: 100%; border-radius: 3px; background: #000;
+      border: 3px solid var(--juchil); box-shadow: 0 0 0 2px var(--gold);
+      box-sizing: border-box;
+    }
+
+    audio { display: block; width: 100%; margin: 0 0 1em; }
+    .cover {
+      display: block; width: 100%; border-radius: 3px;
+      border: 3px solid var(--juchil); box-shadow: 0 0 0 2px var(--gold);
+      box-sizing: border-box;
+    }
+    .caption { margin: .8em 0 1em; font-size: .8em; line-height: 1.7; color: var(--muted); }
+
+    .help-link { display: inline-block; margin: .2em 0 .8em; font-size: .82em; color: var(--cheong); }
+
+    .nav-row { display: flex; gap: .6em; margin-top: 1em; }
+    .nav-row .ui-btn {
+      flex: 1; margin: 0; padding: .9em .5em;
+      background: linear-gradient(180deg, var(--juchil-2), var(--juchil));
+      border: 0; border-radius: 3px;
+      box-shadow: inset 0 0 0 2px rgba(200, 160, 74, .7);
+      color: var(--gold-soft); font-family: var(--serif); font-size: 1em; font-weight: 700;
+      text-shadow: none; letter-spacing: .05em;
+    }
+    .nav-row .ui-btn:hover { background: var(--giwa); color: var(--gold-soft); }
+
+    /* 안내 다이얼로그 */
+    #media-help .ui-content { background: var(--paper); }
+    #media-help ul { margin: 0 0 1.2em; padding-left: 1.2em; font-size: .92em; line-height: 1.8; }
+    #media-help li { margin-bottom: .4em; }
+    #media-help li::marker { color: var(--juchil); }
+    #media-help .ui-btn {
+      background: var(--juchil); border: 0; border-radius: 3px;
+      box-shadow: inset 0 0 0 2px rgba(200, 160, 74, .7);
+      color: var(--gold-soft); font-weight: 700; text-shadow: none;
+    }
+
+    /* ---------- STEP 03 추가: 갤러리 / 팝업 ---------- */
+    .home-btn.ui-btn {
+      background: var(--juchil); border: 1px solid var(--gold); border-radius: 3px;
+      color: var(--gold-soft); font-size: .8em; font-weight: 700; padding: .7em 1em; margin-top: .9em;
+    }
+    .gallery-lead { margin: .4em 0 1em; font-size: .88em; line-height: 1.8; color: var(--muted); }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .7em;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    /* 액자(주칠 나무틀 + 금테) 느낌의 카드 */
+    .gallery-item,
+    .gallery-item:hover,
+    .gallery-item:focus {
+      display: block; overflow: hidden;
+      background: var(--paper-2); border: 3px solid var(--juchil); border-radius: 2px;
+      box-shadow: 0 0 0 1px var(--gold), 0 3px 8px rgba(43, 36, 32, .18);
+      color: var(--ink); text-decoration: none; text-shadow: none;
+    }
+    .gallery-thumb {
+      display: block; overflow: hidden; aspect-ratio: 4 / 3;
+      background: linear-gradient(180deg, #9cc7de 0%, #5f8576 100%);
+    }
+    .gallery-thumb img {
+      display: block; width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform .35s ease, filter .35s ease;
+    }
+    .gallery-caption {
+      display: block; padding: .7em .9em; text-align: center;
+      border-top: 2px solid var(--gold);
+      font-family: var(--serif); font-size: .82em; font-weight: 700; letter-spacing: .04em;
+      transition: background .2s ease, color .2s ease;
+    }
+    @media (hover: hover) {
+      .gallery-item:hover .gallery-thumb img { transform: scale(1.07); filter: brightness(1.05); }
+      .gallery-item:hover .gallery-caption { background: var(--giwa); color: var(--gold-soft); }
+    }
+    .gallery-item:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+    @media (prefers-reduced-motion: reduce) {
+      .gallery-thumb img, .gallery-caption { transition: none; }
+      .gallery-item:hover .gallery-thumb img { transform: none; }
+    }
+
+    #photoPopup {
+      background: var(--paper-2); border-radius: 3px; overflow: hidden;
+      border: 4px solid var(--juchil); box-shadow: 0 0 0 2px var(--gold);
+    }
+    #photoPopup .popup-body { padding: 2.6em .8em .9em; text-align: center; }
+    #photoPopup .popup-img {
+      display: block; margin: 0 auto;
+      max-width: 100%; height: auto;
+      object-fit: contain; border-radius: 2px; background: #eee5d2;
+    }
+    #photoPopup .popup-caption {
+      margin: .8em 0 0; font-family: var(--serif);
+      font-size: 1.05em; font-weight: 700; color: var(--juchil); letter-spacing: .05em;
+    }
